@@ -1,5 +1,5 @@
-using MessagR;
-using MessagR.Example.Components;
+using Messagor;
+using Messagor.Example.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

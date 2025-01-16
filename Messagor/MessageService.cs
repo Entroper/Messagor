@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace MessagR;
+namespace Messagor;
 
 public class MessageService
 {

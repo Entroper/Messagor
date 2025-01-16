@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Components;
 
-namespace MessagR;
+namespace Messagor;
 
-public partial class MessagesComponent : IDisposable
+public partial class Messages : IDisposable
 {
 	protected Stack<MessageService.Message> _messages = new Stack<MessageService.Message>();
 
