@@ -1,0 +1,28 @@
+﻿li {
+    font-family: monospace;
+    list-style: none;
+}
+
+.Trace {
+    color: grey;
+}
+
+.Debug {
+    color: green;
+}
+
+.Information {
+    color: aqua;
+}
+
+.Warning {
+    color: yellow;
+}
+
+.Error {
+    color: red;
+}
+
+.Critical {
+    color: magenta;
+}

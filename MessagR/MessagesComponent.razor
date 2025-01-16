@@ -1,0 +1,12 @@
+﻿@inject MessageService MessageService
+
+@if (_messages.Count > 0)
+{
+    @ChildContent
+}
+<ul>
+    @foreach (var message in _messages)
+    {
+        <li class="@message.Level">@message.When: @message.Content</li>
+    }
+</ul>
