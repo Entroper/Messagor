@@ -15,7 +15,7 @@ public class MessageService
 
     private event Func<Message, Task>? MessagePublished;
 
-    private readonly Queue<Message> _messages = new Queue<Message>();
+    private readonly Queue<Message> _messages = new Queue<Message>(MaxQueueLength);
     private readonly SemaphoreSlim _queueLock = new SemaphoreSlim(1);
 
     public async Task PublishMessage(string messageContent, LogLevel level = LogLevel.Information)

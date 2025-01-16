@@ -7,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddSingleton<MessageService>();
+builder.Services.AddLogging();
+builder.Logging.AddMessageLogger();
 
 var app = builder.Build();
 

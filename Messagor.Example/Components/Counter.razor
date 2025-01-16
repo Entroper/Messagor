@@ -1,4 +1,4 @@
-﻿@inject MessageService _messageService
+﻿@inject ILogger<Counter> _logger
 
 <h1>Counter</h1>
 
@@ -9,9 +9,9 @@
 @code {
     private int currentCount = 0;
 
-    private async Task IncrementCount()
+    private void IncrementCount()
     {
         currentCount++;
-        await _messageService.PublishMessage($"Counter value is {currentCount}");
+        _logger.LogInformation($"Counter value is {currentCount}");
     }
 }
