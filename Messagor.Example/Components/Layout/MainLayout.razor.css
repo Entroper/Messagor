@@ -103,7 +103,8 @@ main {
     }
 
 .layout-footer {
-    height: 20%;
+    height: 25%;
+    min-height: 190px;
     overflow: scroll;
 }
 
