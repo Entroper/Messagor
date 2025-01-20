@@ -13,19 +13,26 @@ main {
 }
 
 .top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;
     align-items: center;
 }
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
+    [data-bs-theme=dark] .top-row {
+        background-color: #111111;
+        border-bottom: 1px solid #333333;
     }
+    [data-bs-theme=light] .top-row {
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #d5d5d5;
+    }
+
+.top-row ::deep a, .top-row ::deep .btn-link {
+    white-space: nowrap;
+    margin-left: 1.5rem;
+    text-decoration: none;
+}
 
     .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
         text-decoration: underline;
@@ -97,8 +104,23 @@ main {
 
 .layout-footer {
     height: 20%;
-    background-color: black;
-    color: #eeeeee;
-    border-top: 3px solid #444444;
     overflow: scroll;
 }
+
+    [data-bs-theme="light"] .layout-footer {
+        background-color: white;
+        color: #111111;
+        border-top: 3px solid #bbbbbb;
+    }
+    [data-bs-theme="dark"] .layout-footer {
+        background-color: black;
+        color: #eeeeee;
+        border-top: 3px solid #444444;
+    }
+    [data-bs-theme="light"] .layout-footer h4 {
+        color: #111111;
+    }
+
+    [data-bs-theme="dark"] .layout-footer h4 {
+        color: #eeeeee;
+    }

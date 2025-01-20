@@ -1,0 +1,38 @@
+﻿@inject IJSRuntime JS
+
+<span><i class="@CssClass" @onclick="Clicked"></i></span>
+
+@code {
+    public string CssClass = "bi-sun-fill";
+    private bool _isDarkMode = false; 
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _isDarkMode = await JS.InvokeAsync<bool>("prefersDarkMode");
+            await SetDarkMode(_isDarkMode);
+            StateHasChanged();
+        }
+    }
+
+    public async Task Clicked()
+    {
+        _isDarkMode = !_isDarkMode;
+        await SetDarkMode(_isDarkMode);
+    }
+
+    private async Task SetDarkMode(bool darkMode)
+    {
+        if (darkMode)
+        {
+            CssClass = "bi-moon-fill";
+            await JS.InvokeVoidAsync("setTheme", "dark");
+        }
+        else
+        {
+            CssClass = "bi-sun-fill";
+            await JS.InvokeVoidAsync("setTheme", "light");
+        }
+    }
+}

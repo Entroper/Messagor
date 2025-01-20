@@ -23,7 +23,7 @@ public class MessageService
         await _queueLock.WaitAsync();
         try
         {
-            var message = new Message { Content = messageContent };
+            var message = new Message { Content = messageContent, Level = level };
             _messages.Enqueue(message);
             if (_messages.Count > MaxQueueLength)
             {

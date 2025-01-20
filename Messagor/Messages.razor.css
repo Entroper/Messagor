@@ -12,11 +12,11 @@
 }
 
 .Information {
-    color: aqua;
+    color: blue;
 }
 
 .Warning {
-    color: yellow;
+    color: darkorange;
 }
 
 .Error {
@@ -24,5 +24,29 @@
 }
 
 .Critical {
+    color: magenta;
+}
+
+[data-bs-theme="dark"] .Trace {
+    color: grey;
+}
+
+[data-bs-theme="dark"] .Debug {
+    color: green;
+}
+
+[data-bs-theme="dark"] .Information {
+    color: aqua;
+}
+
+[data-bs-theme="dark"] .Warning {
+    color: yellow;
+}
+
+[data-bs-theme="dark"] .Error {
+    color: red;
+}
+
+[data-bs-theme="dark"] .Critical {
     color: magenta;
 }

@@ -1,5 +1,21 @@
-﻿@page "/"
+﻿@inject ILogger<Home> _log
+
+@page "/"
 
 <PageTitle>Home</PageTitle>
 
 <Counter></Counter>
+
+<button class="btn btn-primary" @onclick="ColorTest">Color Test</button>
+
+@code {
+    public void ColorTest()
+    {
+        _log.LogTrace("This is a    trace message.");
+        _log.LogDebug("This is a    debug message.");
+        _log.LogInformation("This is an    info message.");
+        _log.LogWarning("This is a     warn message.");
+        _log.LogError("This is an   error message.");
+        _log.LogCritical("This is a critical message.");
+    }
+}
